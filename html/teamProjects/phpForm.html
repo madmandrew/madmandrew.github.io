@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+
+    </head>
+<body>
+
+    <form action="phpForm.php" method="post">
+        NAME: <input type="text" name="name"><br><br>
+        EMAIL: <input type="text" name="email"><br><br>
+        MAJOR: <br>
+
+        <input type="radio" name="major" value="Computer Science"> Computer Science <br>
+        <input type="radio" name="major" value="Web Development and Design"> Web Development and Design <br>
+        <input type="radio" name="major" value="Computer Information Technology">Computer Information Technology <br>
+        <input type="radio" name="major" value="Computer Engineering"> Computer Engineering <br><br>
+
+        Places Visited:<br>
+        <input type="checkbox" name="placesVisited[]" value="North America">North America<br>
+        <input type="checkbox" name="placesVisited[]" value="South America">South America<br>
+        <input type="checkbox" name="placesVisited[]" value="Europe">Europe<br>
+        <input type="checkbox" name="placesVisited[]" value="Africa">Africa<br>
+        <input type="checkbox" name="placesVisited[]" value="Australia">Australia<br>
+        <input type="checkbox" name="placesVisited[]" value="Antarctica">Antarctica<br><br>
+
+        Comments<br>
+        <textarea rows="5" cols="50" name="comments"></textarea>
+
+        <br><br>
+        <button type="submit">SUBMIT</button> <button type="reset">RESET</button>
+    </form>
+
+</body>
+</html>
