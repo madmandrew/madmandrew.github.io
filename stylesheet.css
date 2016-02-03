@@ -1,5 +1,5 @@
 html {
-    height: 80%;
+    height: 100%;
 }
 
 body {
@@ -8,6 +8,7 @@ body {
     padding: 0;
     margin: 0;
     height: 100%;
+    text-align: center;
 }
 
 h1 {
@@ -17,19 +18,6 @@ h1 {
 p {
     color: #FFFFFF;
     text-shadow: 1px 1px black;
-}
-
-div.projectList ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-div.projectList li{
-
-}
-div.projectList a{
-    font-weight: bolder;
-    color: #FFFFFF;
 }
 
 div.header ul{
@@ -66,8 +54,34 @@ div.header a:hover, a:active {
     text-align: center;
     width: 100%;
     height: 60px;
+    padding: 0;
+}
+
+.content {
+    display: inline-block;
+    float: center;
+    background: #607D8B;
+    padding: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
+    height: calc(100% - 60px);
+    text-align: center;
+}
+
+div.projectList ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+div.projectList li{
 
 }
+div.projectList a{
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+
 
 .circular {
     width: 200px;
@@ -76,9 +90,11 @@ div.header a:hover, a:active {
     background: url(images/marriage-image.jpg) no-repeat;
     background-size: cover;
     box-shadow: 3px 3px 50px #FFFFFF;
-    float: left
+    float: left;
+    margin: 15px;
 }
 
+/*
 .aboutInfo {
     background: #607D8B;
     padding: 20px;
@@ -88,3 +104,4 @@ div.header a:hover, a:active {
     height: 100%;
     text-align: center;
 }
+*/
