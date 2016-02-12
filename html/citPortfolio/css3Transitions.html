@@ -16,9 +16,22 @@
         <input type="button" value="start progressbar" onclick="progressBarStart()">
         <input type="button" value="reset progressbar" onclick="progressBarReset()">
 
+        <br>
+
+        Percentage: <input type="text" id="progressPercentage"> <input type="button" value="Change" onclick="changePercentage()">
+
     </body>
 
     <script type="text/javascript">
+
+        function changePercentage()
+        {
+            var percentage = document.getElementById("progressPercentage").value;
+            console.log("changing percentage to: " + percentage);
+            document.getElementById("progressBar1").className = "progressBar";
+            document.getElementById("progressBar1").style.width = percentage + "%";
+        }
+
         var progressBarStart = function()
         {
             console.log("testing progress function");

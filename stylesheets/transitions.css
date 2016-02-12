@@ -12,7 +12,7 @@
     background-color: green;
     height: 100%;
     width: 0px;
-    transition: width 5s linear;
+    transition: width .5s linear;
 }
 
 .progressBarContainer:hover {
