@@ -1,0 +1,2 @@
+This is an example to show you can
+pull data from a file using AJAX
