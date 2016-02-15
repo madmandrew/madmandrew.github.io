@@ -24,20 +24,18 @@ function ajaxRequest () {
 
     console.log("started");
 
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function()
+    var request = new XMLHttpRequest();
+    request.onload = function()
     {
         console.log("FINISHED!");
         console.log(request.responseText);
     }
 
-    xhr.open("GET", urlString, true);
-    xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    request.open("GET", urlString);
+    request.send();
 
-    xhr.send();
-
-    /*gapi.client.setApiKey(apiKey);
+    /*
+    gapi.client.setApiKey(apiKey);
 
     var request = new XMLHttpRequest();
     console.log(gapi);
@@ -50,7 +48,7 @@ function ajaxRequest () {
     }
 
     request.open("GET", urlString);
-    xhr.setRequestHeader('Authorization', 'Bearer ' + oauthToken.access_token);
+    //xhr.setRequestHeader('Authorization', 'Bearer ' + oauthToken.access_token);
     request.send();
 
     console.log("finsihed script");*/

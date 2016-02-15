@@ -9,15 +9,18 @@
 
         <h3>Progress bar example</h3>
 
-        <div class="progressBarContainer">
+        <div class="progressBarContainer progressBarContainerRotate">
             <div class="progressBar" style="background-coler:red" id="progressBar1">&nbsp;</div>
         </div><br>
 
         <input type="button" value="start progressbar" onclick="progressBarStart()">
         <input type="button" value="reset progressbar" onclick="progressBarReset()">
 
-        <br>
+        <br><br>
 
+        <div class="progressBarContainer">
+            <div class="progressBar2" style="background-coler:red" id="progressBar2">&nbsp;</div>
+        </div><br>
         Percentage: <input type="text" id="progressPercentage"> <input type="button" value="Change" onclick="changePercentage()">
 
     </body>
@@ -28,8 +31,8 @@
         {
             var percentage = document.getElementById("progressPercentage").value;
             console.log("changing percentage to: " + percentage);
-            document.getElementById("progressBar1").className = "progressBar";
-            document.getElementById("progressBar1").style.width = percentage + "%";
+            //document.getElementById("progressBar2").className = "progressBar";
+            document.getElementById("progressBar2").style.width = percentage + "%";
         }
 
         var progressBarStart = function()

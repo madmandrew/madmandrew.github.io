@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="portfolio_js/dom.js" type="text/javascript"></script>
+        <style>
+            .tabsContainer {
+                width: 550px;
+                height: 25px;
+                border-style: solid;
+                border-color: blue;
+            }
+
+            .contentBox {
+                width: 550px;
+                height: 500px;
+                border-style: solid;
+                border-color: blue;
+            }
+        </style>
     </head>
 
     <body>
         <h1>DOM (Document Object Model) Manipulation</h1>
+
+        <h3>Tabs demo</h3>
+        <div id="tabsContainer" class="tabsContainer">
+            <input type="button" value="+ADD" id="addButton" onclick="addTab()">
+        </div>
+
+        <div id="contentBox" class="contentBox">
+        </div>
+
+        <div class="tabButton">Test <a href="" class="closeTab">x</a></div>
     </body>
 </html>
