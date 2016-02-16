@@ -1,9 +1,74 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            .hide {
+                display: none;
+            }
+            .showError {
+                display: block;
+                color: red;
+                font-weight: bold;
+            }
+        </style>
     </head>
 
     <body>
         <h1>Local Storage</h1>
+        <h3>NoteBook Demo</h3>
+        <form>
+            Name: <input type="text" placeholder="Name" id="name">
+            <span class="hide" id="nameError">Enter a Name!</span><br><br>
+            <textarea rows="4" cols="60" id="note"></textarea>
+            <span class="hide" id="noteError">Enter a Note!</span><br><br>
+
+            <button type="button" onclick="addNote()">Add Note</button>
+        </form>
+
+        <hr>
+        <h2>Notes</h2>
+        <hr>
+
+        <div id="notesBox">
+        </div>
+
     </body>
+
+    <script type="text/javascript">
+        function addNote()
+        {
+            var name = document.getElementById("name").value;
+            var note = document.getElementById("note").value;
+
+            document.getElementById("nameError").className = "hide";
+            document.getElementById("noteError").className = "hide";
+            if (name == "")
+            {
+                document.getElementById("nameError").className = "showError";
+                return;
+            }
+            if (note == "")
+            {
+                document.getElementById("noteError").className = "showError";
+                return;
+            }
+
+            var date = new Date();
+            document.getElementById("notesBox").innerHTML += "Name: " + name
+                + "<br>Note Date: " + date.toUTCString()
+                + "<br>Note: " + note + "<br><hr>";
+
+            //console.log("name: " + name + ", note: " + note);
+        }
+
+        function saveNote()
+        {
+
+        }
+
+        function loadNotes()
+        {
+
+        }
+    </script>
 </html>
