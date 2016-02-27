@@ -1,0 +1,3 @@
+[submodule "HolyBurger"]
+	path = HolyBurger
+	url = https://github.com/madmandrew/HolyBurger.git
