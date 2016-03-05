@@ -2,3 +2,6 @@
 [submodule "holyBurger"]
 	path = holyBurger
 	url = https://github.com/madmandrew/HolyBurger.git
+[submodule "HolyBurger"]
+	path = HolyBurger
+	url = https://github.com/madmandrew/HolyBurger.git
