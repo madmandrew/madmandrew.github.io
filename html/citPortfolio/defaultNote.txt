@@ -1,0 +1,12 @@
+<img src="/images/marriage-image.jpg" width="35" height="35" align="left">
+Name: Andrew<br>
+Note Post Date: Sat, 05 Mar 2016 9:25 GMT<br>
+Welcome to my notebook demo<br>
+This is just a basic example of what a note can look like<br>
+Also this note is being loaded via AJAX<br>
+<hr>
+<img src="http://s3.amazonaws.com/digitaltrends-uploads-prod/2015/12/star-wars-the-force-awakens-kylo-poster.jpg" width="35" height="35" align="left">
+Name: Kylo Ren<br>
+Note Post Date: Sat, 05 Mar 2016 9:27 GMT<br>
+I hijacked this notebook using the force<br>
+<hr>

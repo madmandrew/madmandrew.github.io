@@ -19,10 +19,11 @@
         <form>
             Name: <input type="text" placeholder="Name" id="name">
             <span class="hide" id="nameError">Enter a Name!</span><br><br>
+            Optional icon: <input type="text" placeholder="icon URL" id="iconURL"><br><br>
             <textarea rows="4" cols="60" id="note"></textarea>
             <span class="hide" id="noteError">Enter a Note!</span><br><br>
 
-            <button type="button" onclick="addNote()">Add Note</button>
+            <button type="button" onclick="addNote()">Add Note</button>&nbsp;&nbsp;&nbsp;<button type="button" onclick="deleteNotes()">Delete All Notes</button>
         </form>
 
         <hr>
@@ -30,15 +31,23 @@
         <hr>
 
         <div id="notesBox">
+
         </div>
 
     </body>
 
     <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", loadNotes, false);
+
         function addNote()
         {
             var name = document.getElementById("name").value;
             var note = document.getElementById("note").value;
+            var img = "<img width='35' height='35' align='left' src='";
+            img += document.getElementById("iconURL").value || "/images/unkownUser.jpg";
+            img +="'>";
+
+            console.log(img);
 
             document.getElementById("nameError").className = "hide";
             document.getElementById("noteError").className = "hide";
@@ -54,21 +63,59 @@
             }
 
             var date = new Date();
-            document.getElementById("notesBox").innerHTML += "Name: " + name
-                + "<br>Note Date: " + date.toUTCString()
-                + "<br>Note: " + note + "<br><hr>";
+            var noteObject = {
+                "image": img,
+                "name": name,
+                "note": note,
+                "datePosted": date.toUTCString()
+            }
+            saveNote(noteObject);
+            addNoteToDisplay(noteObject);
 
-            //console.log("name: " + name + ", note: " + note);
+            //we will clear note for convenience and keep username
+            document.getElementById("note").value = "";
         }
 
-        function saveNote()
+        function addNoteToDisplay(noteObject)
         {
+            document.getElementById("notesBox").innerHTML += noteObject.image
+                + "Name: " + noteObject.name
+                + "<br>Note Date: " + noteObject.datePosted
+                + "<br>" + noteObject.note + "<br><hr>";
+        }
 
+        function saveNote(noteObject)
+        {
+            //this is a lot more slick then if statements... || assignment operator
+            var allNotes = JSON.parse(localStorage.getItem("allNotes")) || [];
+            allNotes.push(noteObject);
+            localStorage.setItem("allNotes", JSON.stringify(allNotes));
         }
 
         function loadNotes()
         {
+            var request = new XMLHttpRequest();
+            request.onload = function ()
+            {
+                document.getElementById("notesBox").innerHTML = request.responseText;
+                var allNotes = JSON.parse(localStorage.getItem("allNotes"));
+                if(allNotes)
+                {
+                    for (var i = 0; i < allNotes.length; i++)
+                    {
+                        addNoteToDisplay(allNotes[i]);
+                    }
+                }
+            }
+            request.open("GET", "/html/citPortfolio/defaultNote.txt",true);
+            request.send();
+        }
 
+        function deleteNotes()
+        {
+            confirm("Are you sure you want to delete all notes? \nThere is no backup.");
+            localStorage.clear();
+            document.getElementById("notesBox").innerHTML = "";
         }
     </script>
 </html>
