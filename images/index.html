@@ -1,0 +1,202 @@
+
+<!-- saved from url=(0033)http://127.0.0.1:50062/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="./index_files/gameStyle.css">
+        <script src="./index_files/tabObject.js"></script>
+        <script src="./index_files/atkPageObject.js"></script>
+        <script src="./index_files/oPageObject.js"></script>
+        <script src="./index_files/statsObject.js"></script>
+        <script src="./index_files/oObject.js"></script>
+        <script src="./index_files/upgPageObject.js"></script>
+
+    </head>
+    <body>
+
+        <div class="gameBox">
+            <div class="tabBar">
+                <div class="tab3" id="atkTab"><span class="tabText">Attack</span></div>
+                <div class="tab3" id="upgTab"><span class="tabText">Upgrade</span></div>
+                <div class="lastTab3 Tab3" id="oTab"><span class="tabText">O's</span></div>
+                <!--<div class="tab4"></div>-->
+            </div>
+            <div class="gameContent">
+                <div id="atkPage" style="display: none;">
+                    <div id="firstX" class="commonRow">
+                        <div class="attackLabel">
+                            <span class="attackInnerLabel">x-1</span>
+                        </div>
+
+                        <div class="enemyHealth">
+                            <div class="enemyInnerHealth" id="firstXBar">
+                                <span class="enemyInnerHealthText" id="firstXBarText">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="atkButtonContainer">
+                            <button type="button" class="atkButton" id="firstXButton">Atk</button>
+                        </div>
+                    </div>
+
+                    <div id="secondX" class="commonRow" style="display: block">
+                        <div class="attackLabel">
+                            <span class="attackInnerLabel">x-2</span>
+                        </div>
+
+                        <div class="enemyHealth">
+                            <div class="enemyInnerHealth" id="secondXBar">
+                                <span class="enemyInnerHealthText" id="secondXBarText">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="atkButtonContainer">
+                            <button type="button" class="atkButton" id="secondXButton">Atk</button>
+                        </div>
+                    </div>
+
+                    <div id="thirdX" class="commonRow" style="display: none">
+                        <div class="attackLabel">
+                            <span class="attackInnerLabel">x-3</span>
+                        </div>
+
+                        <div class="enemyHealth">
+                            <div class="enemyInnerHealth" id="thirdXBar">
+                                <span class="enemyInnerHealthText" id="thirdXBarText">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="atkButtonContainer">
+                            <button type="button" class="atkButton" id="thirdXButton">Atk</button>
+                        </div>
+                    </div>
+                    
+                    <div id="fourthX" class="commonRow" style="display: none">
+                        <div class="attackLabel">
+                            <span class="attackInnerLabel">x-4</span>
+                        </div>
+
+                        <div class="enemyHealth">
+                            <div class="enemyInnerHealth" id="fourthXBar">
+                                <span class="enemyInnerHealthText" id="fourthXBarText">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="atkButtonContainer">
+                            <button type="button" class="atkButton" id="fourthXButton">Atk</button>
+                        </div>
+                    </div>
+                    
+                    <div id="fifthX" class="commonRow" style="display: none">
+                        <div class="attackLabel">
+                            <span class="attackInnerLabel">x-5</span>
+                        </div>
+
+                        <div class="enemyHealth">
+                            <div class="enemyInnerHealth" id="fifthXBar">
+                                <span class="enemyInnerHealthText" id="fifthXBarText">100%</span>
+                            </div>
+                        </div>
+
+                        <div class="atkButtonContainer">
+                            <button type="button" class="atkButton" id="fifthXButton">Atk</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="upgPage" style="display: block;">
+                    <div class="commonRow">
+                            <button class="upgButton" id="atkPowerButton">
+                                <span class="upgButtonLabel">Attack Power</span>
+                                <span class="upgButtonLevel"></span>
+                                <span class="upgButtonCost">
+                                    5 x-kills and $5
+                                </span>
+                            </button>
+                    </div>
+                    <div class="commonRow">
+                            <button class="upgButton" id="atkSpeedButton">
+                                <span class="upgButtonLabel">Attack Speed</span>
+                                <span class="upgButtonLevel"></span>
+                                <span class="upgButtonCost">
+                                    10 x-kills and $10
+                                </span>
+                            </button>
+                    </div>
+                    <div class="commonRow">
+                            <button class="upgButton" id="xKillValueButton">
+                                <span class="upgButtonLabel">x-kill $-value</span>
+                                <span class="upgButtonLevel"></span>
+                                <span class="upgButtonCost">
+                                    15 x-kills and $15
+                                </span>
+                            </button>
+                    </div>
+                    <div class="commonRow">
+                            <button class="upgButton" id="autoAttackButton">
+                                <span class="upgButtonLabel">Auto Attack</span>
+                                <span class="upgButtonCost">
+                                    5 x-kills and $20
+                                </span>
+                            </button>
+                    </div>      
+                    <div class="commonRow">
+                            <button class="upgButton" id="newOButton">
+                                <span class="upgButtonLabel">Add New O</span>
+                                <span class="upgButtonLevel">lvl: 1</span>
+                                <span class="upgButtonCost">400 x-kills and $2000</span>
+                            </button>
+                    </div>
+                </div>
+
+                <div id="oPage" style="display: none;">
+                    <canvas id="oCanvas" class="oCanvas">
+                    </canvas>
+                    
+                    <div class="leftColumn">
+                        <button type="button" class="oButtons" id="buyCrown">buy Crown</button>
+                        <button type="button" class="oButtons" id="buyMustache">buy Mustache</button>
+                        <button type="button" class="oButtons" id="buyPet">buy Pet</button>
+                        
+                    </div>
+                    <div class="rightColumn">
+                        <button type="button" class="oButtons" id="buySword">buy Sword</button>
+                        <button type="button" class="oButtons" id="buyShield">buy Shield</button>
+                        <button type="button" class="oButtons" id="buyPetAccessory" disabled="">buy Pet Accessory</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="footer" class="footer">
+                <div id="money" style="float:right" class="footerStats">$ 999500</div>
+                <div id="xKills" style="float:left" class="footerStats">x kills: 1000000</div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var statsObject;
+            var oObject;
+            var upgPage;
+            document.addEventListener("DOMContentLoaded", function(event)
+            {
+                new TabObject("atkTab","upgTab","oTab");
+                
+                //var statsObject = new StatsObject();
+                //var oObject = new O_Object();
+                
+                statsObject = new StatsObject();
+                oObject = new O_Object();
+                
+                var atkPage = new AtkPageObject(statsObject, oObject);
+                
+                var oPage = new oPageObject();
+                upgPage = new UpgradePageObject(statsObject, oObject, atkPage);
+                
+                statsObject.addSubscriber(oPage);
+                statsObject.addSubscriber(upgPage);
+                
+                document.getElementById("upgTab").click();
+            });
+            
+        </script>
+    
+
+</body></html>
